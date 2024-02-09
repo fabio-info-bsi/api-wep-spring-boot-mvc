@@ -7,6 +7,9 @@ Um exemplo de API REST com spring boot com mvc.
 - @Service, @Component, @Controller, @RestController, @RestControllerAdvice
 - ResponseEntity
 - Exceptions customizadas e Handler para tratá-las.
+- Logback
+- MDC para logs
+- Implementação de Interceptor para Requests (HandlerInterceptor & WebMvcConfigurer) 
 
 ## Lembretes
 
@@ -45,3 +48,24 @@ Um exemplo de API REST com spring boot com mvc.
       }
   }
   ````
+- #### Para registrar MDC nos logs utilize `MDC.put("<key>", <value>);`
+- #### É possível criar interceptor para requests. Basta implementar interface `HandlerInterceptor` e adicionar aos Interceptors do Spring.
+  ```Java
+  public class RequestHandlerInterceptorImpl implements HandlerInterceptor {
+        @Override
+        public boolean preHandle(final HttpServletRequest request, final HttpServletResponse response, final Object handler) {
+            //logic
+            return true;
+        }
+  }
+  ```
+  Adicionando no Spring interceptor:
+  ```java
+  @Configuration
+  public class WebConfig implements WebMvcConfigurer {
+      @Override
+      public void addInterceptors(final InterceptorRegistry registry) {
+          registry.addInterceptor(new RequestHandlerInterceptorImpl());
+      }
+  }
+  ```

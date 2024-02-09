@@ -8,7 +8,9 @@ import org.springframework.web.servlet.HandlerInterceptor;
 public class RequestHandlerInterceptorImpl implements HandlerInterceptor {
 
     @Override
-    public boolean preHandle(final HttpServletRequest request, final HttpServletResponse response, final Object handler) throws Exception {
+    public boolean preHandle(final HttpServletRequest request,
+                             final HttpServletResponse response,
+                             final Object handler) {
         String traceId = request.getHeader("traceid");
         MDC.put("traceId", traceId);
         return true;
