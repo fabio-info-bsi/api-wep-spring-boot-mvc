@@ -23,6 +23,7 @@ public class PaymentController{
     @PostMapping("/payment")
     public ResponseEntity<?> makePayment(@RequestBody final PaymentDetailsDto paymentDetailsDto,
                                          @RequestHeader final Map<String, String> headers) {
+        log.info("Request Body: {}", paymentDetailsDto);
         PaymentDetailsDto pd = this.paymentService.processPayment(paymentDetailsDto);
         return ResponseEntity.status(HttpStatus.OK)
                 .header("timestamp", String.valueOf(System.currentTimeMillis()))
