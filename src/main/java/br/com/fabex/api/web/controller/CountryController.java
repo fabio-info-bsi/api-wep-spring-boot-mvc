@@ -17,9 +17,9 @@ public class CountryController {
 
     private static final List<CountryDto> counties = List.of(
             new CountryDto[]{
-                CountryDto.of(1, "Brazil", 18_000_00),
-                CountryDto.of(2, "Argentina", 5_000_00),
-                CountryDto.of(3, "Chile", 2_000_00),
+                    CountryDto.of(1, "Brazil", 18_000_00),
+                    CountryDto.of(2, "Argentina", 5_000_00),
+                    CountryDto.of(3, "Chile", 2_000_00),
             }
     );
 
