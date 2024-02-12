@@ -14,7 +14,7 @@ Um exemplo de API REST com spring boot com mvc.
 - @Transactional
 
 ## Atenção
-> Ao utilizar `@Transactional` lembre-se de tratar Exceptions Checked. Abaxo é possível demonstrar a implementação do Aspect da @Transactional.
+> Ao utilizar `@Transactional` lembre-se de tratar Exceptions Checked. Abaixo é possível demonstrar a implementação do Aspect da @Transactional.
 > ````java
 > try {
 >   //start transaction
