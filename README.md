@@ -11,6 +11,21 @@ Um exemplo de API REST com spring boot com mvc.
 - Implementação de Interceptor para Requests (HandlerInterceptor & WebMvcConfigurer)
 - JdbcTemplate (@Repository, RowMapper, `JdbcTemplate.update & query`)
 - H2 Database (`schema.sql` , `data.sql`)
+- @Transactional
+
+## Atenção
+> Ao utilizar `@Transactional` lembre-se de tratar Exceptions Checked. Abaxo é possível demonstrar a implementação do Aspect da @Transactional.
+> ````java
+> try {
+>   //start transaction
+>   //call intercepted method
+>   //commit transaction
+> } catch (RuntimeException e) {
+>   //rollback transaction
+> }
+> ````
+> 
+
 
 ## Lembretes
 
