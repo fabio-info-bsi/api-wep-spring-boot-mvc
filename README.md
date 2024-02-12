@@ -4,14 +4,17 @@ Um exemplo de API REST com spring boot com mvc.
 ## Usou/Criou:
 - @SpringBootApplication
 - Lombok (@Slf4j, @AllArgsConstructor, @Getter, @Setter, @Data)
-- @Service, @Component, @Controller, @RestController, @RestControllerAdvice
+- @Service, @Component, @Controller, @RestController, @RestControllerAdvice, @RequestMapping
 - ResponseEntity
 - Exceptions customizadas e Handler para tratá-las.
-- Logback
-- MDC para logs
-- Implementação de Interceptor para Requests (HandlerInterceptor & WebMvcConfigurer) 
+- Configs Logback & MDC em logs
+- Implementação de Interceptor para Requests (HandlerInterceptor & WebMvcConfigurer)
+- JdbcTemplate (@Repository, RowMapper, `JdbcTemplate.update & query`)
+- H2 Database (`schema.sql` , `data.sql`)
 
 ## Lembretes
+
+- #### Pra acessar H2 via browser use: http://localhost:8080/h2-console
 
 - #### Por padrão o spring cria uma `String` representação de um `Object` no formato JavaScript Object Notation (JSON) e retornar o dado via endpoint (`@RestController`)
     Ex:
