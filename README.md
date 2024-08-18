@@ -12,6 +12,13 @@ Um exemplo de API REST com spring boot com mvc.
 - JdbcTemplate (@Repository, RowMapper, `JdbcTemplate.update & query`)
 - H2 Database (`schema.sql` , `data.sql`)
 - @Transactional
+- Application spring-events
+  - ContextStartedEvent
+  - ContextStoppedEvent
+  - ContextRefreshedEvent
+  - ContextClosedEvent
+  - ApplicationStartedEvent
+  - @EventListener
 
 ## Atenção
 > Ao utilizar `@Transactional` lembre-se de tratar Exceptions Checked. Abaixo é possível demonstrar a implementação do Aspect da @Transactional.
